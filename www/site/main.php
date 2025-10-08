@@ -6,6 +6,8 @@
     <title>SQL</title>
 </head>
 <body>
-    
+    <?php
+        $db = mysqli_connect("localhost", "root", "1234", "mysitedb");
+    ?>
 </body>
 </html>
