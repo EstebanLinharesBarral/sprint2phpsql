@@ -33,8 +33,12 @@
         }
 
         echo "<br><a href='/main.php'>Volver al inicio</a>";
-
-        mysqli_close($db);
     ?>
+
+    <p>Deja un nuevo comentario:</p>
+    <form method="post">
+        <textarea rows="4" cols="50" name="Comentario"></textarea><br>
+        <input type="submit" value="Comentar">
+    </form>
 </body>
 </html>
