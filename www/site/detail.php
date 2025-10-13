@@ -25,15 +25,14 @@
             echo "</section>";
         }
         
-
-        echo "<br><h3>Comentarios</h3>";
+        echo "<div class ='comentarios'>";
+        echo "<h3>Comentarios</h3>";
         $datosComentario = "Select * from tComentarios where juego_id = " . $_GET["id"];
         $resultComentario = mysqli_query($db, $datosComentario) or die("Query Error");
         while($comentario = mysqli_fetch_array($resultComentario)){
-            echo "<p>" . $comentario["comentario"] . "</p>";
+            echo "<p>" . $comentario["comentario"] . " - " . $comentario["fecha"] . "</p>";
         }
-
-        echo "<br><a href='/main.php'>Volver al inicio</a>";
+        echo "</div>";
     ?>
 
     <p>Deja un nuevo comentario:</p>
@@ -42,5 +41,9 @@
         <input type="hidden" name="juego_id" value="<?php echo $id;?>">
         <input type="submit" value="Comentar">
     </form>
+    
+    <br>
+
+    <a href='/main.php'>Volver al inicio</a>
 </body>
 </html>
